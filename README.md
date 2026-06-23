@@ -10,11 +10,11 @@ RepoLens analyzes a GitHub user's public repositories, ranks them using a scorin
 
 
 
-![RepoLens Dashboard Screenshot](assets/screenshot1.png)
+![RepoLens Dashboard Screenshot](/screenshot1.png)
 
-![RepoLens Dashboard Screenshot](assets/screenshot2.png)
+![RepoLens Dashboard Screenshot](/screenshot2.png)
 
-![RepoLens Dashboard Screenshot](assets/screenshot3.png)
+![RepoLens Dashboard Screenshot](/screenshot3.png)
 ---
 
 ## Preview Features
