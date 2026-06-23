@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Repo Intel Dashboard Pro</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="background-orb orb-one"></div>
+  <div class="background-orb orb-two"></div>
+
+  <main class="app-shell">
+    <header class="hero">
+      <nav class="nav">
+        <div class="brand">
+          <div class="brand-mark">RI</div>
+          <div>
+            <p class="eyebrow">GitHub analytics</p>
+            <h1>Repo Intel Dashboard</h1>
+          </div>
+        </div>
+        <a class="github-link" href="https://github.com" target="_blank" rel="noreferrer">Open GitHub</a>
+      </nav>
+
+      <section class="hero-grid">
+        <div>
+          <p class="pill">Local-first developer intelligence</p>
+          <h2>Turn any GitHub profile into a ranked portfolio report.</h2>
+          <p class="hero-copy">
+            Analyze repositories, score project strength, inspect language mix, and identify portfolio-ready work from a polished local dashboard.
+          </p>
+
+          <form id="searchForm" class="search-panel">
+            <div class="input-wrap">
+              <span>@</span>
+              <input id="usernameInput" type="text" placeholder="GitHub username" autocomplete="off" />
+            </div>
+            <button type="submit">Analyze profile</button>
+          </form>
+
+          <p class="hint">Try <button class="ghost-button" data-user="namerami">namerami</button> or <button class="ghost-button" data-user="torvalds">torvalds</button></p>
+        </div>
+
+        <div class="signal-card">
+          <p class="signal-label">Portfolio signal</p>
+          <div class="signal-score" id="signalScore">--</div>
+          <p id="signalText">Run an analysis to calculate profile strength.</p>
+        </div>
+      </section>
+    </header>
+
+    <section id="status" class="status hidden"></section>
+
+    <section class="metric-grid">
+      <article class="metric-card">
+        <span>Total repos</span>
+        <strong id="totalRepos">--</strong>
+      </article>
+      <article class="metric-card">
+        <span>Total stars</span>
+        <strong id="totalStars">--</strong>
+      </article>
+      <article class="metric-card">
+        <span>Total forks</span>
+        <strong id="totalForks">--</strong>
+      </article>
+      <article class="metric-card">
+        <span>Recent repos</span>
+        <strong id="recentRepos">--</strong>
+      </article>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="panel chart-panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Distribution</p>
+            <h3>Language mix</h3>
+          </div>
+          <span id="languageCount" class="chip">-- languages</span>
+        </div>
+        <div id="languageChart" class="bar-stack"></div>
+      </article>
+
+      <article class="panel chart-panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Ranking</p>
+            <h3>Top projects by score</h3>
+          </div>
+          <span class="chip">weighted</span>
+        </div>
+        <div id="scoreChart" class="score-bars"></div>
+      </article>
+    </section>
+
+    <section class="panel controls-panel">
+      <div>
+        <p class="eyebrow">Repository explorer</p>
+        <h3>Ranked repositories</h3>
+      </div>
+
+      <div class="controls">
+        <select id="languageFilter">
+          <option value="all">All languages</option>
+        </select>
+        <select id="sortSelect">
+          <option value="score">Sort by score</option>
+          <option value="stars">Sort by stars</option>
+          <option value="forks">Sort by forks</option>
+          <option value="updated">Sort by updated</option>
+          <option value="name">Sort by name</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="repoGrid" class="repo-grid"></section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

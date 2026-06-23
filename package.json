@@ -1,0 +1,32 @@
+{
+  "name": "repo-intel-dashboard-pro",
+  "version": "1.0.0",
+  "description": "A polished local GitHub repository intelligence dashboard built with TypeScript, Express, and vanilla frontend charts.",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "npx ts-node server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "keywords": [
+    "github",
+    "typescript",
+    "express",
+    "dashboard",
+    "developer-tools",
+    "portfolio"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.30",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
