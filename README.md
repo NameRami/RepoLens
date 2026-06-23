@@ -1,26 +1,37 @@
-# Repo Intel Dashboard Pro
+# RepoLens
 
 A polished local GitHub repository intelligence dashboard built with **TypeScript**, **Express**, and a custom frontend UI.
 
-It analyzes a GitHub user's public repositories, ranks them, and displays portfolio-style insights with charts, cards, filters, and direct repo links.
+RepoLens analyzes a GitHub user's public repositories, ranks them using a scoring system, and displays portfolio-style insights with charts, cards, filters, and direct repository links.
 
+---
+
+## Screenshot
+
+
+
+![RepoLens Dashboard Screenshot](assets/screenshot1.png)
+
+![RepoLens Dashboard Screenshot](assets/screenshot2.png)
+
+![RepoLens Dashboard Screenshot](assets/screenshot3.png)
 ---
 
 ## Preview Features
 
-- Local dashboard at `http://localhost:3000`
-- GitHub repository ranking table
-- Score-based project cards
-- Language distribution chart
-- Top-score chart
-- Search by GitHub username
-- Filter by language
-- Sort by score, stars, forks, or recent update
-- Clean responsive UI
-- No native modules
-- No `canvas`
-- No Visual Studio build tools required
-- Works on Windows + Node 24
+* Local dashboard at `http://localhost:3000`
+* GitHub repository ranking system
+* Score-based project cards
+* Language distribution chart
+* Top-score project chart
+* Search by GitHub username
+* Filter repositories by language
+* Sort by score, stars, forks, recent update, or name
+* Clean responsive UI
+* No native modules
+* No `canvas`
+* No Visual Studio build tools required
+* Works on Windows + Node 24
 
 ---
 
@@ -47,13 +58,15 @@ npm install
 
 ## GitHub Token Setup
 
-A token is recommended because unauthenticated GitHub API requests have lower rate limits.
+A GitHub token is recommended because unauthenticated GitHub API requests have lower rate limits.
 
 Create a token here:
 
+```text
 https://github.com/settings/tokens
+```
 
-Suggested token type:
+Suggested setup:
 
 1. Go to **GitHub Settings**
 2. Open **Developer settings**
@@ -62,7 +75,7 @@ Suggested token type:
 5. Generate a token
 6. Copy it immediately
 
-For public repository analysis, you usually do not need broad permissions. Public read access is enough.
+For public repository analysis, broad permissions are not required. Public read access is enough.
 
 Create a `.env` file in the project root:
 
@@ -117,7 +130,9 @@ http://localhost:3000
 ## Project Structure
 
 ```text
-repo-intel-dashboard-pro/
+repo-lens/
+├── assets/
+│   └── screenshot.png
 ├── public/
 │   ├── app.js
 │   ├── index.html
@@ -149,29 +164,29 @@ http://localhost:3000/api/analyze/torvalds
 
 Response includes:
 
-- ranked repositories
-- language distribution
-- total stars
-- total forks
-- recently updated count
-- top repository by score
+* ranked repositories
+* language distribution
+* total stars
+* total forks
+* recently updated repository count
+* top repositories by score
 
 ---
 
 ## Scoring Logic
 
-Repos are scored using:
+Repositories are scored using:
 
-- stars
-- forks
-- watchers
-- recent activity
-- description presence
-- homepage presence
-- topics
-- license
-- repo size sanity
-- non-archived status
+* stars
+* forks
+* watchers
+* recent activity
+* description presence
+* homepage presence
+* topics
+* license
+* repository size sanity
+* non-archived status
 
 The scoring logic lives in:
 
@@ -188,7 +203,7 @@ You can tune the weights there.
 ```bash
 git init
 git add .
-git commit -m "Initial commit: repo intelligence dashboard"
+git commit -m "Initial commit: RepoLens dashboard"
 git branch -M main
 git remote add origin <your-repo-url>
 git push -u origin main
@@ -203,10 +218,11 @@ github-api
 dashboard
 developer-tools
 portfolio
+repository-analysis
 ```
 
 ---
 
 ## Notes
 
-This project intentionally avoids native charting dependencies. Charts are rendered with custom HTML/CSS/SVG-style bars in the browser, so it stays stable on Windows, macOS, and Linux.
+RepoLens intentionally avoids native charting dependencies. Charts are rendered with custom browser-based HTML and CSS, so the project stays stable on Windows, macOS, and Linux.
